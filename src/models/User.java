@@ -22,8 +22,8 @@ import javax.persistence.Table;
             query = "SELECT COUNT(u) FROM User AS u"
             ),
     @NamedQuery(
-            name = "checkLoginCodeAndPassword",
-            query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.password = :pass"
+            name = "checkLoginNameAndPassword",
+            query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.name = :name AND u.password = :pass"
             )
 })
 @Entity
@@ -33,7 +33,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "password", length = 64, nullable = false)

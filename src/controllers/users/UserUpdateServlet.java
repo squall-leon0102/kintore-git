@@ -42,6 +42,14 @@ public class UserUpdateServlet extends HttpServlet {
 
             User u = em.find(User.class, (Integer)(request.getSession().getAttribute("user_id")));
 
+            Boolean name_duplicate_check = true;
+            if(u.getName().equals(request.getParameter("name"))) {
+                name_duplicate_check = false;
+            } else {
+                u.setName(request.getParameter("name"));
+            }
+
+
             // パスワード欄に入力があったら
             // パスワードの入力値チェックを行う指定をする
             Boolean password_check_flag = true;
@@ -62,7 +70,7 @@ public class UserUpdateServlet extends HttpServlet {
             u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
             u.setDelete_flag(0);
 
-            List<String> errors = UserValidator.validate(u, password_check_flag);
+            List<String> errors = UserValidator.validate(u, name_duplicate_check, password_check_flag);
             if(errors.size() > 0) {
                 em.close();
 
