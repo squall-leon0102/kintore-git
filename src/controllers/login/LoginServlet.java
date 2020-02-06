@@ -15,24 +15,18 @@ import models.User;
 import utils.DBUtil;
 import utils.EncryptUtil;
 
-/**
- * Servlet implementation class LoginServlet
- */
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("_token", request.getSession().getId());
         request.setAttribute("hasError", false);
@@ -47,9 +41,7 @@ public class LoginServlet extends HttpServlet {
 
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Boolean check_result = false;
@@ -81,7 +73,7 @@ public class LoginServlet extends HttpServlet {
             }
         }
         if(!check_result) {
-            // 認証できなかったらログイン画面に戻る
+
             request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
             request.setAttribute("name", name);
@@ -89,7 +81,7 @@ public class LoginServlet extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
             rd.forward(request, response);
         } else {
-            // 認証できたらログイン状態にしてトップページへリダイレクト
+
             request.getSession().setAttribute("login_user", u);
 
             request.getSession().setAttribute("flush", "ログインしました。");

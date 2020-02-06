@@ -22,6 +22,10 @@ import javax.persistence.Table;
             query = "SELECT COUNT(u) FROM User AS u"
             ),
     @NamedQuery(
+            name = "checkRegisteredName",
+            query = "SELECT COUNT(u) FROM User AS u WHERE u.name = :name"
+            ),
+    @NamedQuery(
             name = "checkLoginNameAndPassword",
             query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.name = :name AND u.password = :pass"
             )
