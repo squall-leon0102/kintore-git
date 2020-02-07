@@ -14,7 +14,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Table(name="training")
+@Table(name="trainings")
 @NamedQueries({
         @NamedQuery(
                 name = "getAllTrainings",
@@ -40,6 +40,9 @@ public class Training {
 
     @Column(name = "training_date", nullable = false)
     private Date training_date;
+
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "pushup", nullable = false)
     private Integer pushup;
@@ -84,6 +87,14 @@ public class Training {
 
     public void setTraining_date(Date training_date) {
         this.training_date = training_date;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Integer getPushup() {

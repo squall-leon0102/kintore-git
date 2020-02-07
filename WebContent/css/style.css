@@ -110,3 +110,24 @@ select {
 h1 a {
     color: #eeeeee;
 }
+
+table#training_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#training_list .training_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+table#training_list .training_date {
+    width: 20%;
+}
+
+table#training_list .training_title {
+    width: 37%;
+}
+
+table#training_list .training_action {
+    width: 13%;
+}
