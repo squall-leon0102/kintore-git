@@ -43,6 +43,7 @@ public class TrainingEditServlet extends HttpServlet {
         if(t != null && login_user.getId() == t.getUser().getId()){
             request.setAttribute("training", t);
             request.setAttribute("_token", request.getSession().getId());
+            request.getSession().setAttribute("training_id", t.getId());
         }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/trainings/edit.jsp");
