@@ -131,3 +131,6 @@ table#training_list .training_title {
 table#training_list .training_action {
     width: 13%;
 }
+h3 {
+    font-size: larger;
+}
