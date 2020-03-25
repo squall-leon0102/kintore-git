@@ -23,7 +23,7 @@
                                 <div style="width: 45%">
                                 <canvas id="myDoughnutChart" width="600" height="600"></canvas>
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-                                <script>
+                                <script >
                                 var ctx = document.getElementById("myDoughnutChart").getContext('2d');
                                 var myDoughnutChart = new Chart(ctx, {
                                     type: 'doughnut',
@@ -40,8 +40,17 @@
                                             ],
                                         }]
                                     },
-
-                                });</script>
+                                    options: {
+                                        responsive: true,
+                                        legend: {
+                                          position: 'right',
+                                          labels :{
+                                              fontsize: 20,
+                                          }
+                                        },
+                                        }
+                                        });
+                                </script>
                                 </div>
                                 </td>
                             </tr>

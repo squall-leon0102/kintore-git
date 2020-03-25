@@ -10,6 +10,7 @@
 
     </div>
 </c:if>
+<div id="training-wrapper">
 <label for="training_date">日付</label><br />
 <input type="date" name="training_date" value="<fmt:formatDate value='${training.training_date}' pattern='yyyy-MM-dd' />" />
 <br /><br />
@@ -44,4 +45,5 @@
 
 
 <input type="hidden" name="_token" value="${_token}" />
-<button type="submit">投稿</button>
+<button type="submit" class="button-shadow">投稿</button>
+</div>

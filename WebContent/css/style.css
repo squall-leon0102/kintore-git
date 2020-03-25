@@ -3,6 +3,14 @@
 body {
     color: #333333;
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+    background-color: #f0f8ff;
+}
+
+#wrapper {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 120px;
+    box-sizinf: border-box;
 }
 
 #header {
@@ -54,6 +62,7 @@ table {
 th {
     width: 26%;
     padding: 10px 2%;
+    background-color:#faebd7;
 }
 
 td {
@@ -61,13 +70,51 @@ td {
     padding: 10px 2%;
 }
 
-button {
-    font-size: 14px;
-    padding: 5px 10px;
+#login-wrapper{
+                                          text-align: center;
+
+}
+
+#login-box{
+    padding: 50px;
+    margin: 0 auto;
+    width:50%;
+    max-width:200px;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    text-align: center;
+
+}
+
+
+.button-shadow {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  text-align:center;
+  cursor: pointer;
+}
+.button-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
 }
 
 #footer {
+    width: 100%;
+    background-color: #333333;
     text-align: center;
+    padding: 30px 0;
+    position: absolute;
+    bottom: 0;
 }
 table#user_list th {
     width: 30%;
@@ -133,4 +180,36 @@ table#training_list .training_action {
 }
 h3 {
     font-size: larger;
+}
+#flush_success {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #155724;
+    background-color: #d4edda;
+}
+
+#flush_error {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+#name {
+    text-algn: center;
+}
+
+#password {
+   text-algn: center;
+}
+
+#training-wrapper{
+      text-algn: center;
+      font-size: 16px;
 }
